@@ -1,8 +1,13 @@
 @import "../shared/helper";
 
-
+%legend {
+  height: px(40); display: flex; align-items: center;
+  justify-content: center; flex-wrap: wrap; padding-right: px(10);
+  > span {display: inline-block; width: px(16); height: px(10);
+    border-radius: px(2); margin: 0 px(10);}
+}
 .home {flex: 1;display: flex;flex-direction: column;
-    background: #010310; color: white;
+    background: #040b31; color: white;
     font-size: px(16);
     >header {
     height: px(99);
@@ -12,10 +17,10 @@
   }
   > footer {
     height: px(68);
-    border: 1px solid #0d2d59;
+    border: 1px solid #082d61;
     margin: px(20) 0 1px;
     border-radius: 4px;
-    background: #0c0d2b;
+    background: #0b0c2c;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,12 +44,8 @@
       box-shadow: 0 0 2px 0 #0e325f, inset 0 0 2px 0 #0e325f;
       background: #0f113a;
       &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top: 0;
+        pointer-events: none;
+        content: '';position: absolute;left: 0;right: 0;bottom: 0;top: 0;
         border-radius: 4px;
         box-shadow: 17px 0 0 -16px #0e325f,
         -17px 0 0 -16px #0e325f,
@@ -92,7 +93,7 @@
         height: px(455);
       }
     }
-    .管辖统计, .破获排名, .发案趋势, .案发时段, .战果, .籍贯, .年龄段, .案发类型, .案发街道, .作案手段{
+    .居住地统计, .性别及年龄, .身体状况, .人数, .往年, .籍贯, .年龄段, .工作背景, .居住街道, .居住状况{
       height: px(315);
       display: flex;
       flex-direction: column;
@@ -116,8 +117,12 @@
         width: 100%;
       }
     }
-    .chart12 {
+    .chart11, .chart12 {
       flex: 1;display: flex; flex-direction: column;
+      > .chart {display: flex;
+        > .main {flex: 1}
+      }
+      .legend {@extend %legend;}
     }
      .年龄段 {display: flex;flex-direction: column;
       height: px(363);
@@ -128,10 +133,7 @@
        flex: 1;display: flex; flex-direction: column;
       }
       &-图1, &-图2{
-        .legend {height: px(40); display: flex; align-items: center;
-          justify-content: center; flex-wrap: wrap; padding-right: px(10);
-          > span {display: inline-block; width: px(16); height: px(10);
-            border-radius: px(2); margin: 0 px(10);}
+          .legend { @extend %legend;
           .male {background: #33a4fa;}
           .female {background: #8d70f8;}
         }
@@ -154,7 +156,7 @@
         h3 {font-size: px(20); color: #7ab6db; margin-top: px(6);}
       }
     }
-     .发案趋势, .案发时段 {
+     .身体状况, .人数 {
       height: px(363);
     }
     .籍贯 {
@@ -184,7 +186,7 @@
         }
       }
     }
-    .战果, .作案手段 {
+    .往年, .居住状况 {
       padding: 0 px(24);
       > table {
         width: 100%; table-layout: fixed;
@@ -206,7 +208,7 @@
         }
       }
     }
-     .作案手段 {
+     .居住状况 {
       > table {
         tbody {
           td {
@@ -215,7 +217,7 @@
         }
       }
     }
-    .破获排名 {
+    .性别及年龄{
       height: px(423);
       .legend {
         display: flex;

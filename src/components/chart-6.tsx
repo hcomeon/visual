@@ -6,7 +6,7 @@ import china from '../geo/china.json';
 
 export const Chart6 = () => {
   const divRef = useRef(null);
-   const colors = {'青海省': '#BB31F7', '甘肃省': '#15B8FD', '四川省': '#06E1EE'};
+   const colors = {'青海省': '#BB31F7', '陕西省': '#15B8FD', '四川省': '#06E1EE'};
   useEffect(() => {
      var myChart = echarts.init(divRef.current);
     // @ts-ignore
@@ -19,12 +19,12 @@ export const Chart6 = () => {
           type: 'map',
           mapType: 'CN', // 自定义扩展图表类型
           data: [
-            {name: '甘肃省', value: 1},
+            {name: '陕西省', value: 1},
           ],
           label: {show: false, color: 'white'},
           itemStyle: {
             areaColor: '#010D3D',
-            color: colors['甘肃省'],
+            color: colors['陕西省'],
             borderColor: '#01A7F7',
             emphasis: {
               label: {color: 'white'},
@@ -71,11 +71,11 @@ export const Chart6 = () => {
 
   return (
     <div className="bordered 籍贯">
-      <h2>全市犯罪人员籍贯分布地</h2>
+      <h2>养老人员籍贯分布地</h2>
       <div className="wrapper">
         <div ref={divRef} className="chart"/>
         <div className="legend bordered">
-          <span className="icon" style={{background: colors['甘肃省']}}/>甘肃籍
+          <span className="icon" style={{background: colors['陕西省']}}/>陕西籍
           <span className="icon" style={{background: colors['四川省']}}/>四川籍
           <span className="icon" style={{background: colors['青海省']}}/>青海籍
         </div>

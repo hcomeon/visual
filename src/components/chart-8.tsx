@@ -31,11 +31,11 @@ export const Chart8 = () => {
             borderWidth: px(4)
           },
           data: [
-            {value: 0.07, name: '10-20'},
-            {value: 0.10, name: '20-30'},
-            {value: 0.23, name: '30-40'},
-            {value: 0.28, name: '40-50'},
-            {value: 0.32, name: '50-60'},
+            {value: 0.32, name: '50-59'},
+            {value: 0.28, name: '60-69'},
+            {value: 0.23, name: '70-79'},
+            {value: 0.18, name: '80-89'},
+            {value: 0.13, name: '>90'},
           ]
         }
       ]
@@ -49,11 +49,11 @@ export const Chart8 = () => {
         <div className="text">年龄段</div>
       </div>
       <div className="legend">
-        <span style={{background: colors[0]}} />10-20
-        <span style={{background: colors[1]}} />20-30
-        <span style={{background: colors[2]}} />30-40
-        <span style={{background: colors[3]}} />40-50
-        <span style={{background: colors[4]}} />50-60
+        <span style={{background: colors[0]}} />50-59
+        <span style={{background: colors[1]}} />60-69
+        <span style={{background: colors[2]}} />70-79
+        <span style={{background: colors[3]}} />80-89
+        <span style={{background: colors[4]}} />90
       </div>
     </div>
   );

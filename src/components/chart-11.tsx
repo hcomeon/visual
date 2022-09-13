@@ -33,10 +33,10 @@ export const Chart11 = () => {
             shadowColor: 'rgba(0, 0, 0, 0.5)'
           },
           data: [
-            {value: 0.36, name: '刑事案件'},
-            {value: 0.20, name: '民事案件'},
-            {value: 0.18, name: '经济案件'},
-            {value: 0.24, name: '其他案件'},
+            {value: 0.18, name: '工人'},
+            {value: 0.13, name: '农民'},
+            {value: 0.19, name: '个体'},
+            {value: 0.22, name: '企事业'},
           ]
         }
       ]
@@ -44,15 +44,15 @@ export const Chart11 = () => {
   }, []);
 
   return (
-    <div className="年龄段-图1">
+    <div className="chart11">
       <div className="chart">
         <div className="main" ref={divRef}/>
       </div>
       <div className="legend">
-        <span style={{background: colors[0]}} />刑事
-        <span style={{background: colors[1]}} />民事
-        <span style={{background: colors[2]}} />经济
-        <span style={{background: colors[3]}} />其他
+        <span style={{background: colors[0]}} />工人
+        <span style={{background: colors[1]}} />农民
+        <span style={{background: colors[2]}} />个体
+        <span style={{background: colors[3]}} />企事业
       </div>
     </div>
   );

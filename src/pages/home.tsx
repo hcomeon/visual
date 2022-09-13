@@ -36,7 +36,7 @@ export const Home = () => {
          <section className="section4">
           <Chart6 />
            <div className="bordered 年龄段">
-            <h2>犯罪人员年龄段分布</h2>
+            <h2>养老人员年龄段分布</h2>
             <div className="charts">
               <Chart7/>
               <Chart8/>
@@ -45,28 +45,28 @@ export const Home = () => {
           </div>
         </section>
         <section className="section5">
-          <div className="bordered row1 案发类型">
-            <h2>案发类型统计</h2>
+          <div className="bordered row1 工作背景">
+            <h2>工作背景分析</h2>
             <div className="charts">
             <Chart10/>
             <Chart11/>
             </div>
           </div>
-          <div className="bordered row2 案发街道">
-            <h2>案发街道统计</h2>
+          <div className="bordered row2 居住街道">
+            <h2>居住街道统计</h2>
             <div className="charts">
               <Chart12 />
               <Chart13/>
             </div>
           </div>
-          <div className="bordered row3 作案手段">
-            <h2>作案手段分析</h2>
+          <div className="bordered row3 居住状况">
+            <h2>居住状况评价</h2>
             <Chart14/>
           </div>
         </section>
       </main>
       <footer>
-        &copy; 大数据 2020-{year}
+        &copy; 数据 2010-{year}
       </footer>
     </div>
   );

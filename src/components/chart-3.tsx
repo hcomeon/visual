@@ -24,7 +24,7 @@ export const Chart3 = () => {
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018],
+        data: [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020],
         splitLine: {show: true, lineStyle: {color: '#073E78'}},
         axisTick: {show: false},
         axisLine: {show: false},
@@ -40,30 +40,25 @@ export const Chart3 = () => {
       },
       series: [
         {
-          name: '抢劫',
+          name: '无行动能力',
           type: 'line',
           data: [0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09].reverse()
         },
         {
-          name: '醉驾',
+          name: '失智失能',
           type: 'line',
           data: [0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10].reverse()
         },
         {
-          name: '盗窃',
+          name: '失智可行动',
           type: 'line',
           data: [0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10, 0.11].reverse()
         },
         {
-          name: '故意杀人',
+          name: '身体良好',
           type: 'line',
           data: [0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10, 0.11, 0.12].reverse()
         },
-        {
-          name: '故意伤人',
-          type: 'line',
-          data: [0.05, 0.06, 0.07, 0.08, 0.09, 0.10, 0.11, 0.12, 0.13].reverse()
-        }
       ].map(obj => ({
         ...obj,
         symbol: 'circle',
@@ -74,8 +69,8 @@ export const Chart3 = () => {
   }, []);
 
   return (
-    <div className="bordered 发案趋势">
-      <h2>发案趋势分析</h2>
+    <div className="bordered 身体状况">
+      <h2>身体状况分析</h2>
       <div ref={divRef} className="chart"/>
     </div>
   );

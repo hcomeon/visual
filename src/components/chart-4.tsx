@@ -11,7 +11,7 @@ export const Chart4 = () => {
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24],
+        data: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
         splitLine: {show: true, lineStyle: {color: '#073E78'}},
         axisTick: {show: false},
         axisLine: {show: false},
@@ -51,8 +51,8 @@ export const Chart4 = () => {
   }, []);
 
   return (
-    <div className="bordered 案发时段">
-      <h2>案发时段分析</h2>
+    <div className="bordered 人数">
+      <h2>人数统计分析</h2>
       <div ref={divRef} className="chart"/>
     </div>
   );

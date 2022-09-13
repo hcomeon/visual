@@ -30,8 +30,8 @@ export const Chart7 = () => {
             borderWidth: px(4)
           },
           data: [
-            {value: 0.2, name: '女'},
-            {value: 0.8, name: '男'},
+            {value: 0.4, name: '女'},
+            {value: 0.6, name: '男'},
           ]
         }
       ]

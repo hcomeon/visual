@@ -6,9 +6,29 @@ import {createEchartsOptions} from '../shared/create-echarts-options';
 
 export const Chart2 = () => {
   const divRef = useRef(null);
+  const myChart = useRef(null);
+  const data = [
+    {name: '50-59', 2011: 2, 2012: 3},
+    {name: '60-69', 2011: 2, 2012: 3},
+    {name: '70-79', 2011: 2, 2012: 3},
+    {name: '80-89', 2011: 2, 2012: 3},
+    {name: '90及以上', 2011: 2, 2012: 3},
+  ];
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
-    myChart.setOption(createEchartsOptions({
+     setInterval(() => {
+      const newData = [
+        {name: '50-59', 2011: 2, 2012: Math.random() * 10},
+        {name: '60-69', 2011: 2, 2012: 3},
+        {name: '70-79', 2011: 2, 2012: 3},
+        {name: '80-89', 2011: 2, 2012: 3},
+        {name: '90及以上', 2011: 2, 2012: 3},
+      ];
+      x(newData);
+    }, 1000);
+  }, []);
+
+  const x = (data) => {
+    myChart.current.setOption(createEchartsOptions({
       xAxis: {
         type: 'value',
         boundaryGap: [0, 0.01],
@@ -18,58 +38,62 @@ export const Chart2 = () => {
       yAxis: {
         axisTick: {show: false},
         type: 'category',
-        data: ['城关区公安局', '七里河区公安局', '西固区公安局', '安宁区公安局', '红古区公安局',
-          '永登县公安局', '皋兰县公安局', '榆中县公安局', '新区公安局'],
+        data: data.map(i => i.name),
         axisLabel: {
           formatter(val) {
-            return val.replace('公安局', '\n公安局');
+            return val.replace('年龄', '\n年龄');
           }
         }
       },
       series: [
         {
-          name: '2011年',
+          name: '50-59',
           type: 'bar',
-          data: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+          data: data.map(i => i[2011]),
           itemStyle: {
             normal: {
               color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
                 offset: 0,
-                color: '#2034f9'
+                color: '#2034F9'
               }, {
                 offset: 1,
-                color: '#04a1ff'
+                color: '#04A1FF'
               }]),
             }
           }
         },
         {
-          name: '2012年',
+          name: '60-69',
           type: 'bar',
-          data: [2, 3, 4, 5, 6, 7, 8, 9, 10],
+          data: data.map(i => i[2012]),
           itemStyle: {
             normal: {
               color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
                 offset: 0,
-                color: '#b92ae8'
+                color: '#B92AE8'
               }, {
                 offset: 1,
-                color: '#6773e7'
+                color: '#6773E7'
               }]),
             }
           }
         }
       ]
     }));
+  };
+  
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    x(data);
   }, []);
 
   return (
-    <div className="bordered 破获排名">
-      <h2>案件破获排名</h2>
+    <div className="bordered 性别及年龄">
+      <h2>性别及年龄分布</h2>
       <div ref={divRef} className="chart"/>
       <div className="legend">
-      <span className="first"/> 破案排名1
-      <span className="second"/> 破案排名2
+      <span className="first"/> 男性
+      <span className="second"/> 女性
       </div>
     </div>
   );

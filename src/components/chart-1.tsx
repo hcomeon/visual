@@ -10,7 +10,7 @@ export const Chart1 = () => {
     var myChart = echarts.init(divRef.current);
     myChart.setOption(createEchartsOptions({
       xAxis: {
-        data: ['兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区'],
+        data: ['北京', '上海', '广州', '深圳', '西安', '成都', '武汉', '重庆', '青岛'],
         axisTick: {show: false},
         axisLine: {
           lineStyle: {color: '#083B70'}
@@ -37,14 +37,14 @@ export const Chart1 = () => {
       },
       series: [{
         type: 'bar',
-        data: [10, 20, 36, 41, 15, 26, 37, 18, 29]
+        data: [11, 22, 36, 41, 58, 69, 37, 18, 29]
       }]
     }));
   }, []);
 
   return (
-    <div className="bordered 管辖统计">
-      <h2>案发派出所管辖统计</h2>
+    <div className="bordered 居住地统计">
+      <h2>居住地统计</h2>
       <div ref={divRef} className="chart">
 
       </div>
